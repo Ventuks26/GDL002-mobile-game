@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import {View, Text, StyleSheet} from "react-native";
+import {View,  StyleSheet, Button, ImageBackground} from "react-native";
 
 class Home extends Component{
     render(){
         return (
-            <View style={styles.container}>
-                <Text>Page Home</Text>
-            </View>
+            <ImageBackground source={require("../img/fondoHome.jpg")} style={styles.container}>
+            <View >
+                
+                <Button style={styles.btn}
+          title="Play"
+          color="#5079C8"
+          
+          
+          onPress={() => this.props.navigation.navigate("Game")}
+        />
+       
+       </View>
+  </ImageBackground>
+            
 
         );
     }
@@ -19,5 +30,10 @@ class Home extends Component{
       backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "center"
+    },
+    btn:{
+    backgroundColor: '#5079C8',
+    borderRadius: 2,
+    
     }
 });

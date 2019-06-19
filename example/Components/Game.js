@@ -9,6 +9,9 @@ import {
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
 
 class Game extends Component {
+  static navigationOptions = {
+    title: "Game",
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -254,21 +257,23 @@ export default Game;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#64624F",
     alignItems: "center",
     justifyContent: "center"
   },
   tile: {
+    backgroundColor:"#64624F",
+    
     borderWidth: 10,
     width: 100,
     height: 100
   },
   tileX: {
-    color: "red",
+    color: "#E5C919",
     fontSize: 60
   },
   tileO: {
-    color: "green",
+    color: "#5079C8",
     fontSize: 60
   }
 });
