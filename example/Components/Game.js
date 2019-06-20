@@ -4,7 +4,7 @@ import {
   View,
   TouchableOpacity,
   Alert,
-  Button,
+  // Button,
   ImageBackground
 } from "react-native";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
@@ -252,8 +252,8 @@ class Game extends Component {
             {this.renderIcon(2, 2)}
           </TouchableOpacity>
         </View>
-        <View style={{ paddingTop: 50 }} />
-        <Button title="Nuevo Juego" color="#E5C919" onPress={this.onNewGamePress} />
+        {/* <View style={{ paddingTop: 50 }} />
+        <Button title="Home" color="#E5C919" onPress={() => this.props.navigation.navigate("Home")} /> */}
       </View>
       
       </ImageBackground>
@@ -283,5 +283,6 @@ const styles = StyleSheet.create({
   tileO: {
     color: "#5079C8",
     fontSize: 60
+  
   }
 });

@@ -1,17 +1,24 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Button, ImageBackground } from "react-native";
-
+import { View, StyleSheet,  ImageBackground } from "react-native";
+import { Button } from 'react-native-elements';
 class Home extends Component {
+  static navigationOptions = {
+    title: "Home",
+  };
   render() {
     return (
       <ImageBackground
         source={require("../img/fondoHome.jpg")}
         style={styles.container}
       >
-        <View style={[styles.btn, { paddingTop: 500 }]}>
+        <View style={{ paddingTop: 500}}>
           <Button
-            title="Play"
+            large
+            icon={{name: "play-arrow", color: "#E5C919", width: 90,
+            height: 40}}
             color="#5079C8"
+            
+            
             onPress={() => this.props.navigation.navigate("Game")}
           />
         </View>
@@ -27,8 +34,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center"
-  },
-  btn: {
-    flex: 1
   }
+  
 });
