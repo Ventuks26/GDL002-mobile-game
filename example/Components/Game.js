@@ -4,9 +4,11 @@ import {
   View,
   TouchableOpacity,
   Alert,
-  Button
+  Button,
+  ImageBackground
 } from "react-native";
 import { MaterialCommunityIcons as Icon } from "react-native-vector-icons";
+
 
 class Game extends Component {
   static navigationOptions = {
@@ -103,28 +105,28 @@ class Game extends Component {
         case 0:
           {
             //Jugada Vertical
-            Alert.alert("Jugador de cruz es el ganador.");
+            Alert.alert("🏆 Jugador de cruz es el ganador 🏆");
             this.initializeGame();
           }
           break;
         case 1:
           {
             //Jugada Horizontal
-            Alert.alert("Jugador de cruz es el ganador.");
+            Alert.alert("🏆 Jugador de cruz es el ganador 🏆");
             this.initializeGame();
           }
           break;
         case 2:
           {
             //Jugada Diagonal izquierda
-            Alert.alert("Jugador  de cruz es el ganador.");
+            Alert.alert("🏆 Jugador  de cruz es el ganador 🏆");
             this.initializeGame();
           }
           break;
         case 3:
           {
             //Jugada Diagonal derecha
-            Alert.alert("Jugador  de cruz es el ganador. ");
+            Alert.alert("🏆 Jugador  de cruz es el ganador 🏆");
             this.initializeGame();
           }
           break;
@@ -134,35 +136,35 @@ class Game extends Component {
         case 0:
           {
             // Jugada Vertical
-            Alert.alert("Jugador  de círculo es el ganador.");
+            Alert.alert("🏆 Jugador  de círculo es el ganador 🏆");
             this.initializeGame();
           }
           break;
         case 1:
           {
             //Jugada Horizontal
-            Alert.alert("Jugador de círculo es el ganador.");
+            Alert.alert("🏆 Jugador de círculo es el ganador 🏆");
             this.initializeGame();
           }
           break;
         case 2:
           {
             //Jugada Diagonal izq
-            Alert.alert("Jugador de círculo es el ganador. ");
+            Alert.alert(" 🏆 Jugador de círculo es el ganador 🏆");
             this.initializeGame();
           }
           break;
         case 3:
           {
             //Jugada Diagonal de derecha
-            Alert.alert("Jugador de círculo es el ganador.");
+            Alert.alert("🏆 Jugador de círculo es el ganador 🏆 ");
             this.initializeGame();
           }
           break;
       }
     } else if (winner[0] == 2) {
       if (winner[1] == 4) {
-        Alert.alert("¡¡¡Nadie ganó!!!");
+        Alert.alert("☠️ ¡¡¡Nadie ganó!!! ☠️");
         this.initializeGame();
       }
     }
@@ -185,6 +187,10 @@ class Game extends Component {
 
   render() {
     return (
+      <ImageBackground
+      source={require("../img/fondoGame.jpg")}
+      style={styles.container}
+    >
       <View style={styles.container}>
         <View style={{ flexDirection: "row" }}>
           <TouchableOpacity
@@ -247,8 +253,10 @@ class Game extends Component {
           </TouchableOpacity>
         </View>
         <View style={{ paddingTop: 50 }} />
-        <Button title="Nuevo Juego" onPress={this.onNewGamePress} />
+        <Button title="Nuevo Juego" color="#E5C919" onPress={this.onNewGamePress} />
       </View>
+      
+      </ImageBackground>
     );
   }
 }
@@ -257,13 +265,13 @@ export default Game;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#64624F",
+    
     alignItems: "center",
     justifyContent: "center"
   },
   tile: {
-    backgroundColor:"#64624F",
     
+    borderColor: "#BBB0AF",
     borderWidth: 10,
     width: 100,
     height: 100
