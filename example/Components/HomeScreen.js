@@ -1,39 +1,37 @@
 import React, { Component } from "react";
-import { View, StyleSheet,  ImageBackground } from "react-native";
-import { Button } from 'react-native-elements';
+import styles from "./Style";
+import { View, Image, Text } from "react-native";
+import { Button } from "react-native-elements";
+
 class Home extends Component {
   static navigationOptions = {
     title: "Home",
+    header: null
   };
+
   render() {
     return (
-      <ImageBackground
-        source={require("../img/fondoHome.jpg")}
-        style={styles.container}
-      >
-        <View style={{ paddingTop: 500}}>
+      <View style={styles.containerHome}>
+        <View>
+          <Image style={styles.logo} source={require("../img/gatoHome.png")} />
+        </View>
+        <View>
+          <Text style={styles.text}>Tic Tac Toe</Text>
+        </View>
+        <View style={{ paddingTop: 150 }}>
           <Button
             large
-            icon={{name: "play-arrow", color: "#E5C919", width: 90,
-            height: 40}}
-            color="#5079C8"
-            
-            
+            icon={{
+              name: "play-arrow",
+              color: "black",
+              width: 90,
+              height: 40
+            }}
             onPress={() => this.props.navigation.navigate("Game")}
           />
         </View>
-      </ImageBackground>
+      </View>
     );
   }
 }
 export default Home;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-  
-});

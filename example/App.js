@@ -1,18 +1,15 @@
 import React from "react";
-import {createStackNavigator, createAppContainer} from "react-navigation";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 import HomeScreen from "./Components/HomeScreen";
 import Game from "./Components/Game";
 
-
-export default class App extends React.Component{
-  render(){
-    return(
-      <AppContainer/>
-    );
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
   }
 }
 
-const AppStackNavigation = createStackNavigator ({
+const AppStackNavigation = createStackNavigator({
   HomeScreen: {
     screen: HomeScreen
   },
