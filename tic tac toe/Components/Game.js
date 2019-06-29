@@ -60,6 +60,7 @@ class Game extends Component {
             //Jugada Diagonal izquierda
             Alert.alert("🏆 Jugador  'X' es el ganador 🏆");
             this.setState({ scoreX: this.state.scoreX + 1 });
+
             this.initializeGame();
           }
           break;
@@ -196,7 +197,6 @@ class Game extends Component {
             >
               Puntos de 'X': {this.state.scoreX}
             </Text>
-            {/* <Text style={{  fontSize: 20, color: "#88D317", fontWeight: "bold" }}>{this.state.scoreX}</Text> */}
           </View>
           <View style={styles.score}>
             <Text
@@ -209,7 +209,6 @@ class Game extends Component {
             >
               Puntos de 'O': {this.state.scoreO}
             </Text>
-            {/* <Text style={{ fontSize: 20, color: "#6E3667", fontWeight: "bold" }}>{this.state.scoreO}</Text> */}
           </View>
         </View>
       </View>
